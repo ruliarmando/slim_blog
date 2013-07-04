@@ -1,0 +1,36 @@
+<div class="right_part">
+	<div class="inner">
+		<div>
+			<h3>Categories</h3>
+			<ul>
+				{% for category in categories %}
+					{% if loop.last %}
+						<li class="last"><a href="{{urlFor('category_view', {'id':category.id})}}">{{category.name}} <span>&#8594;</span></a></li>
+					{% else %}
+						<li><a href="{{urlFor('category_view', {'id':category.id})}}">{{category.name}} <span>&#8594;</span></a></li>
+					{% endif %}
+				{% else %}
+					
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="recent_posts">
+			<h3>Recent Posts</h3>
+			<ul>
+				{% for recent in recent_posts %}
+					<li>{{recent.title}} <br /><a href="{{urlFor('view', {'id':recent.id})}}">{{recent.timestamp|date('F d, Y')}}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="popular_post">
+			<h3>Popular Posts</h3>
+			{% for popular in popular_posts %}
+				<div class="popular_posts">
+					<a class="border_img" href="{{urlFor('view', {'id':popular.id})}}"><img src="{{baseUrl}}/assets/curio/images/wiget_img.jpg" alt="" /></a>
+					<a class="title_popular" href="{{urlFor('view', {'id':popular.id})}}">{{popular.title}}</a>
+					<p>{{popular.content|slice(0, 200)|raw}}...</p>						
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>

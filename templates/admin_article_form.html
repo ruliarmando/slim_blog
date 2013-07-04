@@ -1,0 +1,51 @@
+<form action="{{ action_url }}" class="form-horizontal" method="post">
+		
+	<div class="well">
+		
+		<div class="control-group">
+			<label class="control-label" for="title">Title:</label>
+			<div class="controls">
+				<input class="input-xlarge" type="text" name="title" value="{{ article.title|default('') }}" />
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="cat_id">Category:</label>
+			<div class="controls">
+				<select name="cat_id" class="input-xlarge">
+					{% for cat in categories %}
+						<option value="{{cat.id}}">{{cat.name}}</option>
+					{% else %}
+						<option value="">No Categories Yet</option>
+					{% endfor %}
+				</select>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="author">Author:</label>
+			<div class="controls">
+				<input class="input-xlarge" type="text" name="author" value="{{ article.author|default('') }}" />
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="summary">Summary:</label>
+			<div class="controls">
+				<input class="input-xlarge" type="text" name="summary" value="{{ article.summary|default('') }}" />
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="content">Content:</label>
+			<div class="controls">
+				<textarea class="input-xlarge" name="content" id="content" rows="5" cols="40">{{ article.content|default('') }}</textarea>
+			</div>
+		</div>
+		
+		<div class="form-actions">
+			<input class="btn btn-info" type="submit" value="{{ action_name }} Article" />
+		</div>
+		
+	</div>
+</form>

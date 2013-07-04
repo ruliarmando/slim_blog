@@ -1,0 +1,12 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Edit Article{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="span12">
+			{% include 'article_form.html' %}
+			<p><a href="{{ urlFor('admin_home') }}">Back to dashboard</a></p>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,107 @@
+{% extends 'blog_layout.html' %}
+
+{% block extra %}
+	<script type="text/javascript">
+		$('.step')
+			.live('mouseenter' , function(){
+				$(this).addClass('step_active');
+			})
+			.live('mouseleave' , function(){
+				$(this).removeClass('step_active');
+			})
+	</script>
+{% endblock %}
+
+{% block title %}Slim Blog - About{% endblock %}
+
+{% block content %}
+	
+	<div class="center_wrap texturized">
+		<div class="texturized_top">&nbsp;</div>
+		<div class="center">	
+			<div class="left_part">		
+				<div class="inner">		
+					<h3 class="mission">Welcome to our website! Our Mission</h3>
+					<div class="d_dash"></div>
+					<span class="border_img image_shadow230"><img src="{{baseUrl}}/assets/curio/images/img_about.jpg" alt="" /></span>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliqup ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magn aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation corper suscipit lobortis nisl ut aliqup ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsa et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor it amet, consectetuer adipiscing elit, sed diam nonummy</p>
+					<a href="#" class="btn_read_right">Read More</a>
+					<h3 class="fo_dw">Our Team</h3>
+					<div class="d_dash"></div>
+					
+					<div class="our_team_block">
+						<div class="our_team_item">
+							<div class="t_thumb"><img src="{{baseUrl}}/assets/curio/images/portfolio/faces/face1.jpg" alt="Jeremy Smith"/></div>
+							<div class="t_description">
+								<h4>Ruli Armando</h4>
+								<div class="position">Team Leader</div>
+								<p>Lorem ipsum dolor sit amet,
+									consectetuer adipiscing elit, 
+									sed diam nonu.</p>
+							</div>					
+						</div>
+						<div class="our_team_item last">
+							<div class="t_thumb"><img src="{{baseUrl}}/assets/curio/images/portfolio/faces/face2.jpg" alt="Jessy Smith"/></div>
+							<div class="t_description">
+								<h4>Jessica Smith</h4>
+								<div class="position">Manager</div>
+								<p>Lorem ipsum dolor sit amet,
+									consectetuer adipiscing elit, 
+									sed diam nonu.</p>
+							</div>					
+						</div>
+						<div class="clearboth"></div>
+						<div class="our_team_item">
+							<div class="t_thumb"><img src="{{baseUrl}}/assets/curio/images/portfolio/faces/face3.jpg" alt="Jessy Smith"/></div>
+							<div class="t_description">
+								<h4>Jessy Smith</h4>
+								<div class="position">Client Support</div>
+								<p>Lorem ipsum dolor sit amet,
+									consectetuer adipiscing elit, 
+									sed diam nonu.</p>
+							</div>					
+						</div>
+						<div class="our_team_item last">
+							<div class="t_thumb"><img src="{{baseUrl}}/assets/curio/images/portfolio/faces/face4.jpg" alt="Jessy Smith"/></div>
+							<div class="t_description">
+								<h4>Karen Smith</h4>
+								<div class="position">Strategies</div>
+								<p>Lorem ipsum dolor sit amet,
+									consectetuer adipiscing elit, 
+									sed diam nonu.</p>
+							</div>					
+						</div>
+					</div>
+					
+					<a href="#" class="btn_read_right">Read More</a>
+				</div>
+			</div>
+			<div class="right_part">
+				<div class="inner">
+					<h3 class="hiw_r">How it works</h3>
+					<div class="steps">
+						<div class="step">
+							<h3>Step 1</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibuismod tincidnt ut laoreet dolore magna aliquam erat volutpat.</p>
+						</div>
+						<div class="step">
+							<h3>Step 2</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibuismod tincidnt ut laoreet dolore magna aliquam erat volutpat.</p>
+						</div>
+						<div class="step">
+							<h3>Step 3</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibuismod tincidnt ut laoreet dolore magna aliquam erat volutpat.</p>
+						</div>
+						<div class="step">
+							<h3>Step 4</h3>
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibuismod tincidnt ut laoreet dolore magna aliquam erat volutpat.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearb"></div>
+		</div>
+		<div class="texturized_bottom">&nbsp;</div>
+	</div>
+	
+{% endblock %}

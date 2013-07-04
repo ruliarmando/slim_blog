@@ -1,0 +1,33 @@
+{% extends 'blog_layout.html' %}
+
+{% block title %}Slim Blog - {{ category.name}}{% endblock %}
+
+{% block content %}
+	<div class="center_wrap texturized">
+		<div class="texturized_top">&nbsp;</div>
+		<div class="center">
+			<div class="left_part">
+				<div class="inner">
+					<h3>Articles in Category: {{category.name}}</h3>
+					<div class="d_dash"></div>
+					<ul class="list_style_green misc_list">
+						{% for article in articles %}
+							<li>
+								<a href="{{urlFor('view', {'id':article.id})}}">
+									<h4>{{article.title}}</h4>
+								</a>
+								{{ article.timestamp|date('F d, Y') }}
+							</li>
+						{% else %}
+							<li>No Articles In This Category</li>
+						{% endfor %}
+					</ul>
+					
+				</div>		
+			</div>		
+			{% include 'blog_sidebar.html' %}
+			<div class="clearb"></div>
+		</div>
+		<div class="texturized_bottom">&nbsp;</div>
+	</div>
+{% endblock %}

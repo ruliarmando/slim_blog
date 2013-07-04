@@ -1,0 +1,49 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+	<div class="row-fluid">
+		<h2>Welcome to Slim Blog Admin Panel</h2>
+		Here you can start managing your blog stuff like articles, categories and comments.
+	</div>
+	<hr />
+	<div class="row-fluid">
+		<div class="block">
+			<a href="#page-stats" class="block-heading" data-toggle="collapse">Blog Stats</a>
+			<div id="page-stats" class="block-body collapse in">
+
+				<div class="stat-widget-container">
+					<div class="stat-widget">
+						<div class="stat-button">
+							<p class="title">2,500</p>
+							<p class="detail">Articles</p>
+						</div>
+					</div>
+
+					<div class="stat-widget">
+						<div class="stat-button">
+							<p class="title">200</p>
+							<p class="detail">Categories</p>
+						</div>
+					</div>
+
+					<div class="stat-widget">
+						<div class="stat-button">
+							<p class="title">1,500</p>
+							<p class="detail">Comments</p>
+						</div>
+					</div>
+
+					<div class="stat-widget">
+						<div class="stat-button">
+							<p class="title">12,675</p>
+							<p class="detail">Likes</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

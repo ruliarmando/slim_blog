@@ -1,0 +1,30 @@
+{% extends 'blog_layout.html' %}
+
+{% block title %}Slim Blog - Home{% endblock %}
+
+{% block content %}
+
+	<div class="center_wrap texturized">
+		<div class="texturized_top">&nbsp;</div>
+		<div class="center">
+			<div class="left_part">
+				<div class="inner">
+					{% for article in articles %}
+						<div class="post">
+							<h3><a href="{{urlFor('view', {'id':article.id})}}">{{article.title}}</a></h3>
+							<p class="info_line"><span class="time">{{article.timestamp|date('F d, Y')}}</span> by {{article.author}} / Tags: <a href="#" class="tags"> CSS,</a> <a href="#" class="tags_active">General</a>, <a href="#" class="tags">Wordpress </a> / Blog / <a href="#" class="comments">4 Comments </a></p>
+							<p>{{article.content|raw}}</p>
+							<a href="{{urlFor('view', {'id': article.id})}}" class="btn_read_right">Read More</a>
+						</div>
+					{% else %}
+						<p>No Articles Yet</p>
+					{% endfor %}
+				</div>		
+			</div>		
+			{% include 'blog_sidebar.html' %}
+			<div class="clearb"></div>
+		</div>
+		<div class="texturized_bottom">&nbsp;</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,45 @@
+{
+	"repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "jamie/paris",
+                "version": "1.3.0",
+                "dist": {
+                    "url":  "https://github.com/j4mie/paris/zipball/master",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jamie/idiorm",
+                "version": "1.3.0",
+                "dist": {
+                    "url":  "https://github.com/j4mie/idiorm/zipball/master",
+                    "type": "zip"
+                }
+            }
+        },
+		{
+            "type": "package",
+            "package": {
+                "name": "wixel/gump",
+                "version": "1.0",
+                "dist": {
+                    "url":  "https://github.com/wixel/gump/zipball/master",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+    "require": {
+    	"slim/slim": "2.*",
+    	"slim/extras": "dev-develop",
+        "twig/twig": "1.*",
+        "jamie/paris": "1.*",
+        "jamie/idiorm": "1.*",
+		"wixel/gump": "1.*"
+    }
+}

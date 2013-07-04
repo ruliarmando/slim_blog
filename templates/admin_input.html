@@ -1,0 +1,20 @@
+{% extends 'admin_layout.html' %}
+
+{% block title %}Add Article{% endblock %}
+
+{% block extra %}
+	<script type="text/javascript">
+		$(function(){
+			$('textarea').wysihtml5();
+		});
+	</script>
+{% endblock %}
+
+{% block sub_title %}Add New Articles{% endblock %}
+
+{% block breadcrumb %}<li class="active">Add Article</li>{% endblock %}
+
+{% block content %}
+	<br />
+	{% include 'admin_article_form.html' %}
+{% endblock %}

@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" href="{{baseUrl}}/assets/curio/css/style.css" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="{{baseUrl}}/assets/jquery-notify/ui.notify.css" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'/>	
+	<script type="text/javascript" src="{{baseUrl}}/assets/curio/js/jquery.js"></script>
+	<script type="text/javascript" src="{{baseUrl}}/assets/jquery-notify/jquery-ui.js"></script>
+	<script type="text/javascript" src="{{baseUrl}}/assets/jquery-notify/jquery.notify.min.js"></script>
+	<script src="{{baseUrl}}/assets/curio/js/main.js" type="text/javascript"></script>
+	{% block extra %}{% endblock %}
+	<title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+{% if not logged_in %}
+<!-- Login_form -->
+	<div class="log_hide"> 
+		<div class="log_hide_inner"> 
+			<div class="center">
+				<div class="login_container">
+				<form action="{{urlFor('login')}}">
+					<div class="login_name">
+						<span><label for="username">Username:</label></span>
+						<span><input type="text" name="username" id="login_name"/></span>
+						<span><label><input type="checkbox" value="" id="checkbox" /></label> Remember me</span>
+					</div>
+					<div class="login_pass">
+						<span><label for="password">Password:</label></span>
+						<span><input type="password" name="password" id="password" /></span>
+						<span><a href="#">Forgot password?</a></span>
+					</div>
+					<div class="login_submit">
+						<input type="submit" id="login_button" value="Login"/>&nbsp;&nbsp;
+					</div>
+					<div class="clearb"></div>
+				</form>
+				</div>
+				<a href="#" class="log"></a>
+			</div>
+		</div> 
+	</div> 
+<!-- Login_form_END -->
+{% endif %}
+	
+<!-- Header -->
+	<div class="center">
+		<div class="header"> 
+			<a class="logo" href="{{urlFor('home')}}"><img src="{{baseUrl}}/assets/curio/images/logo.png" alt="" /></a>
+			<div class="slogan">Slim<br />Blog</div>
+			<div class="search">
+				<div class="search_wrap">
+					<input class="search_in" placeholder="Search"/>
+					<a href="#" class="lupa"><img src="{{baseUrl}}/assets/curio/images/search.png" alt="" /></a>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Header END -->
+	
+<!-- Menu -->
+	<div class="center_wrap texturized">
+		<div class="texturized_top">&nbsp;</div>
+		<div class="center">	
+			<div class="menu"> 
+				<div class="menu_inner"> 
+					<ul>
+						<li class="page-item">
+							<a href="{{urlFor('home')}}">Blog</a>
+						</li>
+						<li class="page-item">
+							<a href="{{urlFor('about')}}">About</a>
+						</li>
+						{% if logged_in %}
+						<li class="page-item">
+							<a href="{{urlFor('admin')}}">Admin</a>
+						</li>
+						<li class="page-item">
+							<a href="{{urlFor('logout')}}">Logout</a>
+						</li>
+						{% endif %}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="texturized_bottom">&nbsp;</div>
+	</div>
+<!-- Menu END -->
+
+<!-- Content -->
+	{% block content %}{% endblock %}
+<!-- Content END -->
+		
+	<div class="find_dash"></div>
+<!-- Find block -->
+	<div class="find">
+		<div class="center">
+			<span class="find_us">Find us elsewhere:</span>
+			<a href="#" class="find_img"><img src="{{baseUrl}}/assets/curio/images/f_1.jpg" alt="" /></a>
+			<a href="#" class="find_img"><img src="{{baseUrl}}/assets/curio/images/f_2.jpg" alt="" /></a>
+			<a href="#" class="find_img"><img src="{{baseUrl}}/assets/curio/images/f_3.jpg" alt="" /></a>
+			<a href="#" class="find_img"><img src="{{baseUrl}}/assets/curio/images/f_4.jpg" alt="" /></a>
+			<a href="#" class="find_img"><img src="{{baseUrl}}/assets/curio/images/f_5.jpg" alt="" /></a>
+		</div>
+	</div>
+<!-- Find block END -->
+	
+<!-- Widget area -->
+	<div class="wigets">
+		<div class="center">
+			<div class="categories">
+				<h3>Categories</h3>
+					<ul>
+						{% for cat in categories %}
+							{% if loop.first %}
+								<li class="first"><a href="#">{{cat.name}}</a></li>
+							{% elseif loop.last %}
+								<li class="last"><a href="#">{{cat.name}}</a></li>
+							{% else %}
+								<li><a href="#">{{cat.name}}</a></li>
+							{% endif %}
+						{% endfor %}
+					</ul>
+			</div>
+			<div class="tweets">
+				<h3>Recent Tweets</h3>
+				<div class="tweet">
+					<div class="tweet_top"></div>
+					<div class="tweet_bg">
+						<p><a class="tweet_name" href="#">@twittername </a> Lorem ipsum olorsit amconsectetuer adipi scing elitsed diamn...</p>
+					</div>
+					<div class="tweet_bottom"></div>
+				</div>
+				<div class="tweet">
+					<div class="tweet_top"></div>
+					<div class="tweet_bg">
+						<p><a class="tweet_name" href="#">@twittername </a> Lorem ipsum olorsit amconsectetuer adipi scing elitsed diamn...</p>
+					</div>
+					<div class="tweet_bottom"></div>
+				</div>
+			</div>
+			<div class="contact">
+				<h3>Contact Us</h3>
+				<form action="#">
+					<div class="input_l"><input name="nick" type="text" placeholder="Name" class="input"/></div>
+					<div class="input_l"><input name="mail" type="text" placeholder="Email" class="input"/></div>
+					<table class="textarea_table">
+						<tr>
+							<td class="textarea_tl"></td>
+							<td class="textarea_t"></td>
+							<td class="textarea_tr"></td>
+						</tr>
+						<tr>
+							<td class="textarea_l"></td>
+							<td class="textarea_c">
+								<textarea name="comment" class="textarea" rows="10" cols="10" placeholder="Message"></textarea>
+							</td>
+							<td class="textarea_r"></td>
+						</tr>
+						<tr>
+							<td class="textarea_bl"></td>
+							<td class="textarea_b"></td>
+							<td class="textarea_br"></td>
+						</tr>
+					</table>					
+					<input type="submit" value="Send Message" class="send_msg"/>
+  				</form>
+			</div>
+			<div class="clearb"></div>
+		</div>
+		
+	</div>
+<!-- Widget area END -->
+	
+<!-- Footer -->
+	<div class="footer">
+		<div class="center">
+			<p class="foot">&copy; {{ "now"|date("Y") }} Ruli Armando. All Rights Reserved. Powered by Slim Framework.</p>
+		</div>
+	</div>
+<!-- Footer END -->
+
+<!-- Notify Container -->
+	<div id="container-bottom-right" style="display:none; top:auto; bottom:0; right:0; margin:10px;">
+		<div id="default">
+			<a class="ui-notify-close ui-notify-cross" href="#">x</a>
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+		</div>
+
+		<div id="loading">
+			<h1 style="display:inline;">Loading...</h1>
+			<span><img src="#{icon}" alt="loading" style="padding-left:0 0 0 15px; margin-top:8px;" /></span>
+		</div>
+
+		<div id="message">
+			<a class="ui-notify-close ui-notify-cross" href="#">x</a>
+			<div style="float:left;margin:0 10px 0 0"><img src="#{icon}" alt="message" /></div>
+			<h1>#{title}</h1>
+			<p>#{text}</p>
+		</div>		
+	</div>
+<!-- Notify Container END -->
+{% if not logged_in %}
+<script type="text/javascript">
+	$(document).ready(function(){
+		var container = $("#container-bottom-right").notify();
+		var instance;
+		$('#login_button').click(function(e){
+			e.preventDefault();
+			$.ajax({
+				type: 'POST',
+				url: '{{urlFor("login_callback")}}',
+				data: {
+					username: $('#login_name').val(),
+					password: $('#password').val()
+				},
+				dataType: 'html',
+				beforeSend: function(){
+					$('#login_button').attr('disabled', 'disabled');
+					instance = container.notify('create', 'loading', {
+						icon: '{{baseUrl}}/assets/jquery-notify/ajax-loader.gif'
+					},{ expires:false });
+				},
+				error: function(data){
+					$('#login_button').removeAttr('disabled');
+					alert('erorr ocurred');
+				},
+				success: function(data){
+					$('#login_button').removeAttr('disabled');
+					if(data === '0'){
+						//login failed
+						container.notify('create', 'message', {
+							title: 'Login Failed',
+							text: 'Invalid username or password',
+							icon: '{{baseUrl}}/assets/jquery-notify/alert.png'
+						},{ expires:10000 });
+					}else{
+						//login successful
+						container.notify('create', 'default', {
+							title: 'Login successful',
+							text: 'Please Wait for Redirecting...',
+						},{ expires:10000 });
+						setTimeout(function(){ location.href = '{{urlFor("admin")}}'; }, 3000);
+					}
+					setTimeout(function(){ instance.close(); }, 500);
+					
+				},
+			});
+		});
+	});
+</script>
+{% endif %}
+</body>
+</html>
